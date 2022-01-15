@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gwagware</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+
+  <body>
+    <%= render 'layouts/nav'%>
+    <div class="container">
+      <%if notice%>
+        <%= render 'layouts/alert'%>
+        <%end%>
+
+      <%= yield %>
+ 
+     
+    </div>
+    
+  </body>
+   <script type="text/javascript"> <!-- add this for menu toggle button  -->
+(function() {
+    var burger = document.querySelector('.navbar-burger');
+    var menu = document.querySelector('#'+burger.dataset.target);
+    burger.addEventListener('click', function() {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+})();
+</script>
+</html>
