@@ -1,14 +1,19 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <div class="box">
+              <p class="subtitle is-4">Please login to proceed.</p>
+              <br />
+               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"control has-icons-left input is-small is-rounded" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "input is-small is-rounded" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +24,48 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "button is-block is-primary is-small is-rounded is-fullwidth" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+              <form>
+  <br />
+                <p class="subtitle is-5">Login using Social Media</p>
+                <div class="buttons is-centered" style="margin-bottom: 0;">
+                  <a class="button is-medium is-facebook">
+                    <span class="icon">
+                      <i class="fab fa-facebook-f fa-lg"></i>
+                    </span>
+                  </a>
+                  <a class="button is-medium is-twitter">
+                    <span class="icon">
+                      <i class="fab fa-twitter fa-lg"></i>
+                    </span>
+                  </a>
+                  <a class="button is-medium is-github">
+                    <span class="icon">
+                      <i class="fab fa-github fa-lg"></i>
+                    </span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            <p class="has-text-grey">
+              <%= render "devise/shared/links", class:"has-text-grey" %>
+             </p>
+            <div class="languages select is-small is-rounded">
+              <select>
+                <option selected>English</option>
+                <option>Hausa</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <p class="footer-text">
+            <a href="https://megaryte.herokuapp.com" style="color: white;">Designed with <i class="fa fa-cog" style="font-size: 10px; color: black;"></i> by Aldi Duzha</a>
+          </p>
+        </div>
+      </div>
+    <s/section>
