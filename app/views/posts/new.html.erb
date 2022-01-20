@@ -1,5 +1,39 @@
 <h1>New Post</h1>
 
-<%= render 'form', post: @post %>
 
-<%= link_to 'Back', posts_path %>
+
+
+<section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <div class="box">
+              <p class="subtitle is-4">Please login to proceed.</p>
+              <br />
+              
+  <div class="field">
+   <%= render 'form', post: @post %>
+  </div>
+
+  
+
+             
+            </div>
+           
+            <div class="languages select is-small is-rounded">
+              <select>
+                <option selected>English</option>
+                <option>Hausa</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <p class="footer-text">
+            <a href="https://megaryte.herokuapp.com" style="color: white;">Designed <i class="fa fa-cog" style="font-size: 10px; color: black;"></i> by Megaright ResourcesS</a>
+          </p>
+        </div>
+      </div>
+    </section>

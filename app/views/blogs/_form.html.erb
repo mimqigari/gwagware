@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    
+    <%= form.file_field :image, class:"control has-icons-left input is-small is-rounded" %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, placeholder: "Blog Title (Caption)", class:"control has-icons-left input is-small is-rounded"  %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, placeholder: "Content (Post Body)", class:"control input is-large"  %>
   </div>
 
   <div class="field">
@@ -41,6 +41,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"control button is-rounded"%>
   </div>
 <% end %>
