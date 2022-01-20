@@ -24,10 +24,7 @@
         <div class="navbar-dropdown">
          
          
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
+          
           <a class="navbar-item">
             Empowerment
           </a>
@@ -38,14 +35,14 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <% if member_signed_in? %>
+          <% if user_signed_in? %>
 
-          <%= link_to "Account Settings", edit_member_registration_path, class: "button is-primary" %>
-          <%= link_to "Log out", destroy_member_session_path, method: :delete, class: "button is-light" %>
+          <%= link_to "Account Settings", edit_user_registration_path, class: "button is-primary" %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-light" %>
 
 <% else %>
-          <%= link_to "Sign up", new_member_registration_path, class: "button is-primary" %>
-          <%= link_to "Log in", new_member_session_path, class: "button is-light"%>
+          <%= link_to "Sign up", new_user_registration_path, class: "button is-primary" %>
+          <%= button_to "Log in", new_user_session_path, class: "button is-light"%>
   <%end%>
   
         </div>
