@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'live/index'
   resources :blogs
   devise_for :users
   resources :posts

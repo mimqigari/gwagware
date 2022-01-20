@@ -1,38 +1,80 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  
+
+<section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <div class="box">
+              <p class="subtitle is-4">Please Sign up to proceed.</p>
+              <br />
+              
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"control has-icons-left input is-small is-rounded", autocomplete: "email", placeholder: "Your Email"  %>
   </div>
-
-  <div class="field">
+   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, placeholder: "Full Name" %>
+    <%= f.email_field :name, autofocus: true, autocomplete: "Full Name", class:"control has-icons-left input is-small is-rounded", autocomplete: "email", placeholder: "Your Full Name"  %>
   </div>
   <div class="field">
     <%= f.label :phone %><br />
-    <%= f.text_field :phone, autofocus: true, placeholder: "Phone Number" %>
+    <%= f.text_field :phone, autofocus: true, placeholder: "Phone Number (080 1111 1111)", class:"control has-icons-left input is-small is-rounded", autocomplete: "email"  %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class:"control has-icons-left input is-small is-rounded", placeholder: "Your Password" %>
   </div>
-
-  <div class="field">
+   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.email_field :password_confirmation, autocomplete: "new-password", class:"control has-icons-left input is-small is-rounded", placeholder: "Confirm your Password"  %>
   </div>
 
+  
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "button is-block is-primary is-small is-rounded is-fullwidth" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+              <form>
+  <br />
+                <p class="subtitle is-5">Sign up using Social Media</p>
+                <div class="buttons is-centered" style="margin-bottom: 0;">
+                  <a class="button is-medium is-facebook">
+                    <span class="icon">
+                      <i class="fab fa-facebook-f fa-lg"></i>
+                    </span>
+                  </a>
+                  <a class="button is-medium is-twitter">
+                    <span class="icon">
+                      <i class="fab fa-twitter fa-lg"></i>
+                    </span>
+                  </a>
+                  <a class="button is-medium is-google">
+                    <span class="icon">
+                      <i class="fab fa-github fa-lg"></i>
+                    </span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            <p class="has-text-grey">
+              <%= render "devise/shared/links", class:"has-text-grey" %>
+             </p>
+            <div class="languages select is-small is-rounded">
+              <select>
+                <option selected>English</option>
+                <option>Hausa</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </section>
+<% end %>
