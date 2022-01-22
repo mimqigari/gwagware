@@ -3,7 +3,7 @@
 <h1 class="has-text-centered">Blogs</h1>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Blog', new_blog_path, class: "button is-dark is-small is-rounded"%>
  <section class="section">
     <div class="container">
@@ -57,3 +57,4 @@
     </div>
 </section>  
    <% end %>
+      <% end %>
