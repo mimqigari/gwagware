@@ -17,13 +17,18 @@
   </div>
    <div class="field">
     <%= f.label :name %><br />
-    <%= f.email_field :name, autofocus: true, autocomplete: "Full Name", class:"control has-icons-left input is-small is-rounded", autocomplete: "email", placeholder: "Your Full Name"  %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "Full Name", class:"control has-icons-left input is-small is-rounded", autocomplete: "", placeholder: "Your Full Name"  %>
   </div>
   <div class="field">
     <%= f.label :phone %><br />
     <%= f.text_field :phone, autofocus: true, placeholder: "Phone Number (080 1111 1111)", class:"control has-icons-left input is-small is-rounded", autocomplete: "email"  %>
   </div>
+ <div class="field">
+    <%= f.label :admin %><br />
 
+
+    <%= f.select :admin,[ "false","true"], { prompt:"Admin" }, class:"control has-icons-left is-small is-rounded" %>
+  </div>
   <div class="field">
      <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -33,7 +38,7 @@
   </div>
    <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.email_field :password_confirmation, autocomplete: "new-password", class:"control has-icons-left input is-small is-rounded", placeholder: "Confirm your Password"  %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"control has-icons-left input is-small is-rounded", placeholder: "Confirm your Password"  %>
   </div>
 
   
