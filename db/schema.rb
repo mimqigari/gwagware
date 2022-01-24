@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_231549) do
+ActiveRecord::Schema.define(version: 2022_01_24_213324) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "image"
@@ -21,8 +21,19 @@ ActiveRecord::Schema.define(version: 2022_01_23_231549) do
     t.datetime "at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "approval" null: false
+    t.boolean "approval"
     t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.string "image"
+    t.string "title"
+    t.text "description"
+    t.integer "user_id"
+    t.string "name"
+    t.boolean "approval"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -56,7 +67,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_231549) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "phone"
-    t.boolean "admin", null: false, default: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

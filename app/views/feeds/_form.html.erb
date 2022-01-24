@@ -1,54 +1,45 @@
-<%= form_with(model: blog) do |form| %>
-  <% if blog.errors.any? %>
+<%= form_with(model: feed) do |form| %>
+  <% if feed.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h2><%= pluralize(feed.errors.count, "error") %> prohibited this feed from being saved:</h2>
 
       <ul>
-        <% blog.errors.each do |error| %>
+        <% feed.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+ 
+     <div class="field">
     
     <%= form.file_field :image, class:"control has-icons-left input is-small is-rounded" %>
   </div>
 
+
   <div class="field">
-    <%= form.label :title %><br>
-    <%= form.text_field :title, placeholder: "Blog Title (Caption)", class:"control has-icons-left input is-small is-rounded"  %>
+<%= form.text_field :title, placeholder: "Blog Title (Caption)", class:"control has-icons-left input is-small is-rounded"  %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
     <%= form.text_area :description, placeholder: "Content (Post Body)", class:"control input is-large"  %>
   </div>
 
   <div class="field">
-    
     <%= form.number_field :user_id, value: current_user.id, type: :hidden%>
-  </div>
-  <div class="field">
-
-    
   </div>
 
   <div class="field">
    <%= form.text_field :name, value: current_user.name, type: :hidden %>
   </div>
- 
-  <div>
-   <% form.select :approval,options_for_select([ "false","true"])" %>
-  </div>
-<%end%>
+<% if current_user.admin == true %>
   <div class="field">
-    <%= form.label :at %>
-    <%= form.datetime_select :at %>
-  </div>
 
+    <%= form.check_box :approval %>
+  </div>
+<% end %>
   <div class="actions">
-    <%= form.submit class:"control button is-rounded"%>
+    <%= form.submit %>
   </div>
 <% end %>

@@ -1,0 +1,71 @@
+<% if current_user.admin == true %>
+<table class="table is-narrow is-hoverable">
+  <thead>
+    <tr>
+
+      <th>Title</th>
+   
+    
+      <th>By</th>
+      <th>Approval</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+
+        <td><%= feed.title %></td>
+
+  
+        <td><%= feed.name %></td>
+        <td><%= feed.approval %></td>
+      
+        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
+        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> <% end %>
+
+<br>
+
+<h1 class="has-text-centered">Pending Posts</h1>
+
+<br><h5></h5>
+<% if user_signed_in? %>
+<%= link_to 'New Blog', new_feed_path, class: "button is-dark is-small is-rounded"%>
+ <section class="section">
+    <div class="container">
+      
+ <% @feeds.each do |feed| %>
+<div class="columns is-multiline">
+    
+    
+    <div class="column is-6">
+        <div class="card">
+    <div class="card-image">
+       
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <a href="#">
+                <p class="title is-6"><%= feed.title %></p>
+            </a>
+            <hr>
+            <p class="is-size-6">Published: <%= feed.created_at %> || By: <%= feed.name %></p>  
+            <p class="is-size-7"><%= feed.description %> | <%= feed.approval %>
+</p>
+        </div>
+        <div class="has-text-centered">
+        <% if current_user.admin == true %>
+            
+ 
+    <%= link_to 'Edit', edit_feed_path(feed) %>  <%= button_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>   <% end %> 
+    </div>
+</div>
+    </div>
+    
+</div><% end %><% end %>

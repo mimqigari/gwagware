@@ -23,9 +23,12 @@
 
         <div class="navbar-dropdown">
          
+     
          
+                             <%= link_to "Join", root_path, class: "navbar-item" %>
+     
           
-
+          
         </div>
       </div>
     </div>
@@ -35,7 +38,7 @@
         <div class="buttons">
           <% if user_signed_in? %>
 
-         
+
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-light" %>
 
 <% else %>

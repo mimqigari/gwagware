@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+
+
+<section class="section">
+    <div class="container">
+ 
+<div class="columns is-multiline">
+    
+    
+    <div class="column is-6">
+        <div class="card">
+    <div class="card-image">
+        <figure class="image">
+         <%= image_tag "optimizing.png" %>
+
+</figure>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <a href="#">
+                <p class="title is-6"><%= @feed.title %></p>
+            </a>
+            <hr>
+            <p class="is-size-6">Published: <%= @feed.created_at %> || By: <%= @feed.name %></p>  
+            <p class="is-size-7"><%= @feed.description %>
+</p>
+        </div>
+        <div class="has-text-centered">
+        
+            
+ <%= link_to 'Back', feeds_path %>
+            
+        </div>      
+    </div>
+</div>
+
+
+    </div>
+    
+
+</div>
+
+
+
+    </div>
+</section>  
+
+

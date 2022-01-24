@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :feeds
+  get 'analytics/index'
   match '/users',   to: 'users#index',   via: 'get'
   get 'users/index'
   get 'live/index'
