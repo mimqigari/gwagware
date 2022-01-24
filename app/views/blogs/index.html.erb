@@ -2,7 +2,7 @@
 
 <h1 class="has-text-centered">Blogs</h1>
 
-<br>
+<br><h5>Pending Posts</h5>
 <% if user_signed_in? %>
 <%= link_to 'New Blog', new_blog_path, class: "button is-dark is-small is-rounded"%>
  <section class="section">
@@ -27,7 +27,7 @@
             </a>
             <hr>
             <p class="is-size-6">Published: <%= blog.at %> || By: <%= blog.name %></p>  
-            <p class="is-size-7"><%= blog.description %> <%= blog.approval %>
+            <p class="is-size-7"><%= blog.description %> | <%= blog.approval %>
 </p>
         </div>
         <div class="has-text-centered">
