@@ -38,7 +38,9 @@
   <div class="field">
    <%= form.text_field :name, value: current_user.name, type: :hidden %>
   </div>
-
+  <div class="field">
+   <%= form.select_field :approval,[ "false","true"], { prompt:"Admin" }, class:"control has-icons-left is-small is-rounded" %>
+  </div>
   <div class="field">
     <%= form.label :at %>
     <%= form.datetime_select :at %>

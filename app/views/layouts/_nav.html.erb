@@ -25,9 +25,7 @@
          
          
           
-          <a class="navbar-item">
-            Empowerment
-          </a>
+
         </div>
       </div>
     </div>
@@ -37,7 +35,7 @@
         <div class="buttons">
           <% if user_signed_in? %>
 
-          <%= link_to "Account Settings", edit_user_registration_path, class: "button is-primary" %>
+         
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-light" %>
 
 <% else %>
