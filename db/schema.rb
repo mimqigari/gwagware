@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_144212) do
+ActiveRecord::Schema.define(version: 2022_01_23_231549) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "image"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_144212) do
     t.datetime "at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "approval" null: false
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
@@ -55,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_144212) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "phone"
-    t.boolean "admin"
+    t.boolean "admin", null: false, default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

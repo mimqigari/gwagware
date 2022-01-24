@@ -26,6 +26,11 @@
     <%= form.number_field :member_id, value: current_member.id, type: "hidden" %>
   </div>
 
+    <div class="field">
+
+    <%= f.select :approval,[ "false","true"], { prompt:"Admin" }, class:"control has-icons-left is-small is-rounded"%> 
+  </div>
+  <%= f.select :admin,[ "false","true"], { prompt:"Admin" }, class:"control has-icons-left is-small is-rounded" %>
   <div class="actions">
     <%= form.submit %>
   </div>

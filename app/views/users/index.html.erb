@@ -1,5 +1,5 @@
 <h1>Users#index</h1>
-
+<% if current_user.admin == "true" %>
 <p>Find me in app/views/users/index.html.erb</p>
 <% @users.each do |user| %>
   <%= user.inspect %><br/>
@@ -7,4 +7,4 @@
   <%= user.phone %><br/>
   <%= user.admin %><br/>
 <%= link_to 'Edit', edit_user_registration_path(user) %>
-<% end %>
+<% end %><% end %>
