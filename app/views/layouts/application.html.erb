@@ -2,13 +2,12 @@
 <html>
   <head>
     <title>Gwagware Media Reporters</title>
-    <link rel="manifest" href="/manifest.json" />
-    <script type="module">
+    <link rel="manifest" href="manifest.json" /><script type="module">
    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
    const el = document.createElement('pwa-update');
    document.body.appendChild(el);
 </script>
-    <!-- Mobsted {literal} -->
+
 <script>
     (function(m,o,b,s,t,e,d){
       m[t]=m[t]||{},e=o.createElement(b),d=o.getElementsByTagName(b)[0],
@@ -20,12 +19,7 @@
       projectId: 15
     }
 </script>
-<script type="module">
-   import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-   const el = document.createElement('pwa-update');
-   document.body.appendChild(el);
-</script>
-<!-- /Mobsted {/literal} -->
+
     <%= favicon_link_tag 'favicons/favicon.ico' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
