@@ -1,0 +1,21 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "gwagware.herokuapp",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "gwagware.herokuapp",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/favicons/favicon-a9de6081a2fc875044b8828eff8c483e2a26bde8249e9bea18a0eb0729c9fa93.ico",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ]
+}
